@@ -6,7 +6,8 @@
                 @keydown="masksKeyDown"
                 @keypress="masksKeyPress"
                 @paste="masksPaste"
-                @cut="masksPaste">
+                @cut="masksPaste" 
+                @input="$emit('input', $event.target.value)">
         <template v-if="showRegion">        
             <p v-if="lang === 'RU'">Регион: {{ hint }}</p>
             <p v-else>Region: {{ hint }}</p>
@@ -714,7 +715,7 @@
 	{ "mask": "+27-##-###-####", "cc": "ZA", "name_en": "South Africa", "desc_en": "", "name_ru": "Южно-Африканская Респ.", "desc_ru": "" },
 	{ "mask": "+260-##-###-####", "cc": "ZM", "name_en": "Zambia", "desc_en": "", "name_ru": "Замбия", "desc_ru": "" },
 	{ "mask": "+263-#-######", "cc": "ZW", "name_en": "Zimbabwe", "desc_en": "", "name_ru": "Зимбабве", "desc_ru": "" },
-	{ "mask": "+0#############", "cc": "ZW", "name_en": "Unknown region", "desc_en": "", "name_ru": "Регион не определен", "desc_ru": "" },
+	{ "mask": "+0", "cc": "ZW", "name_en": "Unknown region", "desc_en": "", "name_ru": "Регион не определен", "desc_ru": "" },
 ]
             };
         }

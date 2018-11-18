@@ -24,19 +24,31 @@ new Vue({
   components: {PhoneMask}
 })
 
+// add component to the template with @input event handler to get the value
+<template>
+  <PhoneMask @input="getValue"></PhoneMask>
+</template>
+
+// create event handler method in Vue instanse
+methods: {
+  getValue(value) {
+    console.log(value);
+  }
+}
 ```
 
-## Properties
+## Properties and handlers
 
-| Property    | Required | Type                    | Default | Description                                |
-|-------------|----------|-------------------------|---------|--------------------------------------------|
-| lang        | false    | String                  |   RU    | Set language RU/EN.                        |
-| showRegion  | false    | Boolean                 |   true  | Show region name                           |
+| Property/handler| Required | Type                    | Default | Description                                |
+|-----------------|----------|-------------------------|---------|--------------------------------------------|
+| @input          | true     | Method                  |   --    | Set event handler to get the 'value'       |
+| lang            | false    | String                  |   RU    | Set language RU/EN.                        |
+| showRegion      | false    | Boolean                 |   true  | Show region name                           |
 
 Example:
 ```javascript
 // set component language to english
-<PhoneMask lang="EN"></PhoneMask>
+<PhoneMask @input="getValue" lang="EN"></PhoneMask>
 ```
 
 ## Dependencies
