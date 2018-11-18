@@ -2,6 +2,7 @@
 
 Vue.js multi phone mask component. 
 Just start typing the number and the phone mask will apply automatically.
+Russian and English support(see Properties section).
 
 ![Preview](https://s2.gifyu.com/images/readme2d75a66a4103c3d6.gif)
 
